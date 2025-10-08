@@ -1,8 +1,21 @@
-# 🚀 Getting started with Strapi
+# PASCA CMS 🌸
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
+This is the CMS for [the PASCA website](https://redesign.plantandsoul.org/). The front-end is an Astro app and the repo for that can be found here: https://github.com/plantandsoul/pasca-astro
 
-## scripts
+The CMS is hosted: https://superb-canvas-e9f287e8f1.strapiapp.com/
+
+## 🦾 tech
+- [SQLite](https://www.sqlite.org/docs.html)
+- [Strapi](https://docs.strapi.io/)
+
+## 🛠️ setup
+
+1. clone repo down locally
+3. install deps `npm i`
+2. copy the env by running `cp .env.example .env`
+4. run strapi in dev mode `npm run develop`. This allows you to make schema changes. These changes, once saved, make changes to json files in `/src/*`. These need to be committed and deployed in order for the schema changes to affect the production database.
+
+## 📜 scripts
 
 ### `develop`
 
@@ -30,25 +43,4 @@ npm run build
 
 ## ⚙️ Deployment
 
-Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
-
-```
-yarn strapi deploy
-```
-
-## 📚 Learn more
-
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://strapi.io/blog) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
-
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
-
-## ✨ Community
-
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
-
+We deploy with Strapi Cloud. Previously we've deployed with Railway. Strapi is very flexible and allows for usage of all major databases. Locally, SQLite is used.
