@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_wysiwyg_texts",
+  "info": {
+    "displayName": "WYSIWYG Text",
+    "icon": "paintBrush"
+  },
+  "options": {},
+  "attributes": {
+    "body": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    }
+  },
+  "config": {}
+}
