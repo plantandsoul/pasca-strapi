@@ -27,7 +27,7 @@ export interface SharedRichText extends Struct.ComponentSchema {
   collectionName: 'components_shared_rich_texts';
   info: {
     description: '';
-    displayName: 'Rich text';
+    displayName: 'Markdown Text';
     icon: 'align-justify';
   };
   attributes: {
@@ -62,6 +62,23 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedWysiwygText extends Struct.ComponentSchema {
+  collectionName: 'components_shared_wysiwyg_texts';
+  info: {
+    displayName: 'WYSIWYG Text';
+    icon: 'paintBrush';
+  };
+  attributes: {
+    body: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -70,6 +87,7 @@ declare module '@strapi/strapi' {
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'shared.wysiwyg-text': SharedWysiwygText;
     }
   }
 }

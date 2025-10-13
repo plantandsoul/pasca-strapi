@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "navbar_items",
+  "info": {
+    "singularName": "navbar-item",
+    "pluralName": "navbar-items",
+    "displayName": "Navbar Item"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "external_url": {
+      "type": "string",
+      "default": "https://",
+      "unique": true,
+      "regex": "^https?:\\/\\/[^\\s]+$"
+    },
+    "internal_url": {
+      "type": "string",
+      "default": "/about/history",
+      "unique": true,
+      "regex": "^\\/(?!http)[^\\s]+$"
+    },
+    "sort_weight": {
+      "type": "integer",
+      "default": 0
+    },
+    "parent_navbar_item": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::navbar-item.navbar-item",
+      "inversedBy": "child_navbar_items"
+    },
+    "child_navbar_items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::navbar-item.navbar-item",
+      "mappedBy": "parent_navbar_item"
+    }
+  }
+}

@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "blog_posts",
+  "collectionName": "posts",
   "info": {
-    "singularName": "blog-post",
-    "pluralName": "blog-posts",
-    "displayName": "Blog Post"
+    "singularName": "post",
+    "pluralName": "posts",
+    "displayName": "Post"
   },
   "options": {
     "draftAndPublish": true
@@ -22,17 +22,9 @@
           "localized": true
         }
       },
+      "maxLength": 500,
       "required": true,
       "unique": true
-    },
-    "summary": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "maxLength": 420
     },
     "slug": {
       "type": "uid",
@@ -42,7 +34,18 @@
         }
       },
       "targetField": "title",
-      "required": true
+      "required": true,
+      "maxLength": 144
+    },
+    "summary": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "minLength": 12,
+      "maxLength": 1000
     },
     "blocks": {
       "type": "dynamiczone",
@@ -52,18 +55,14 @@
         }
       },
       "components": [
-        "shared.rich-text",
-        "shared.quote",
-        "shared.slider",
-        "shared.media",
-        "shared.seo"
+        "shared.wysiwyg-text"
       ]
     },
     "topics": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::topic.topic",
-      "inversedBy": "blog_posts"
+      "inversedBy": "posts"
     }
   }
 }

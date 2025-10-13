@@ -21,10 +21,10 @@
       "targetField": "title",
       "required": true
     },
-    "blog_posts": {
+    "posts": {
       "type": "relation",
       "relation": "manyToMany",
-      "target": "api::blog-post.blog-post",
+      "target": "api::post.post",
       "mappedBy": "topics"
     }
   }
