@@ -84,7 +84,9 @@ public/uploads/*
 !public/uploads/.gitkeep
 .tsbuildinfo
 .eslintcache
-public/openapi.json
+
+# don't expose the json spec to production
+public/documentation/openapi.json
 
 ############################
 # Node.js
