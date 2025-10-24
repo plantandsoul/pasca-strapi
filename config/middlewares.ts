@@ -1,7 +1,19 @@
 export default [
   'strapi::logger',
   'strapi::errors',
-  'strapi::security',
+  {
+    name: 'strapi::security',
+    config: {
+      contentSecurityPolicy: {
+        useDefaults: true,
+        directives: {
+          'connect-src': ["'self'", 'https://proxy-event.ckeditor.com'],
+          'img-src': ['*'],
+          'script-src': ["'self'", 'https://cdn.ckeditor.com'],
+        },
+      },
+    },
+  },
   'strapi::cors',
   'strapi::poweredBy',
   'strapi::query',
@@ -9,16 +21,4 @@ export default [
   'strapi::session',
   'strapi::favicon',
   'strapi::public',
-  {
-    name: 'strapi::security',
-    config: {
-      contentSecurityPolicy: {
-        useDefaults: true,
-        directives: {
-          'script-src': ['https://cdn.ckeditor.com'],
-          'connect-src': ['https://proxy-event.ckeditor.com']
-        },
-      },
-    },
-  },
 ];
